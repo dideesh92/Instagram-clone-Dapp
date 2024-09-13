@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/didusmac/Desktop/KBA/Blockchain/Instgramclone Dapp/hardhat/contracts/insta.sol": {
+      "lastModificationDate": 1726223071387,
+      "contentHash": "5f7870a2dc5764b0eb0de29add2f2bd9",
+      "sourceName": "contracts/insta.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "InstagramDapp"
+      ]
+    }
+  }
+}
