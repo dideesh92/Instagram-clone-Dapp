@@ -33,13 +33,13 @@ function MainContent() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[250px,1fr] min-h-screen">
-      <div className="bg-white p-4 shadow-md min-h-screen">
-        <h1 className="text-xl serif italic font-bold mb-4">Instagram Dapp</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+      <div className="text-center">
+      <h1 className="text-5xl text-white font-bold italic serif mb-8">Instagram Dapp</h1>
         {!walletAddress ? (
           <button 
             onClick={connectWallet} 
-            className="bg-blue-500 text-white p-2 w-full rounded mt-2">
+            className="bg-blue-500 text-white p-3 px-6 rounded-full mt-4 hover:bg-blue-600 transition-all">
             Connect Wallet
           </button>
         ) : (
