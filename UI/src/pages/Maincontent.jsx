@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ethers } from 'ethers';
 import { useNavigate } from 'react-router-dom';
 
 function MainContent() {
@@ -8,25 +7,28 @@ function MainContent() {
   const navigate = useNavigate(); // For navigation
 
   const connectWallet = async () => {
-    if (window.ethereum) {
+    if (typeof window.ethereum !== 'undefined') {
+      // MetaMask is available
       try {
+        // Request MetaMask accounts
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        const account = ethers.utils.getAddress(accounts[0]);
+        const account = accounts[0];
         setWalletAddress(account);
+        navigate('/page1');
 
-        // Check if the user is registered on the blockchain
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const contract = new ethers.Contract(contractAddress, contractABI, provider);
-        const registered = await contract.isUserRegistered(account);
+        // Use MetaMask's ethereum object directly for contract interaction
+        const provider = window.ethereum;
+        const contract = new provider.Contract(contractAddress, contractABI); // Adjust this line for contract interaction
+        const registered = await contract.methods.isUserRegistered(account).call();
         setIsRegistered(registered);
 
-        // Redirect to HomePage after successful connection
-        navigate('/home');
+        // Redirect to page1 after successful connection
+       
       } catch (error) {
         console.error("MetaMask connection error:", error);
       }
     } else {
-      alert("Please install MetaMask!");
+      alert("MetaMask is not installed. Please install MetaMask and try again.");
     }
   };
 
