@@ -29,12 +29,10 @@ function MainContent() {
     { username: "user4", profileImage: "https://via.placeholder.com/50" },
   ];
 
-  // Handle file input change
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
 
-  // Handle uploading the file and adding a caption
   const uploadFile = () => {
     const newPost = {
       username: "new_user",
@@ -46,10 +44,9 @@ function MainContent() {
     };
     setPosts([newPost, ...posts]);
     setFile(null);
-    setCaption(''); // Clear caption input after posting
+    setCaption(''); 
   };
 
-  // Handle removing a post
   const removePost = (index) => {
     const updatedPosts = [...posts];
     updatedPosts.splice(index, 1);
@@ -58,7 +55,6 @@ function MainContent() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[250px,1fr] min-h-screen">
-      {/* Sidebar */}
       <div className="bg-white p-4 shadow-md min-h-screen">
         <h1 className="text-xl font-bold mb-4">Instagram Dapp</h1>
         <nav className="space-y-4">
@@ -92,9 +88,7 @@ function MainContent() {
         </nav>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 py-6">
-        {/* Instagram Status */}
         <div className="flex space-x-4 overflow-x-auto mb-6">
           {statuses.map((status, index) => (
             <div key={index} className="flex flex-col items-center">
@@ -108,7 +102,6 @@ function MainContent() {
           ))}
         </div>
 
-        {/* Posts */}
         {posts.map((post, index) => (
           <div key={index} className="max-w-xl mx-auto bg-white p-4 shadow-lg mt-4 rounded-lg">
             <div className="flex items-center justify-between mb-4">

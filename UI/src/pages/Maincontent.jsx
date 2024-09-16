@@ -4,25 +4,23 @@ import { useNavigate } from 'react-router-dom';
 function MainContent() {
   const [walletAddress, setWalletAddress] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
-  const navigate = useNavigate(); // For navigation
+  const navigate = useNavigate(); 
 
   const connectWallet = async () => {
     if (typeof window.ethereum !== 'undefined') {
-      // MetaMask is available
+     
       try {
-        // Request MetaMask accounts
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const account = accounts[0];
         setWalletAddress(account);
         navigate('/page1');
 
-        // Use MetaMask's ethereum object directly for contract interaction
         const provider = window.ethereum;
-        const contract = new provider.Contract(contractAddress, contractABI); // Adjust this line for contract interaction
+        const contract = new provider.Contract(contractAddress, contractABI); 
         const registered = await contract.methods.isUserRegistered(account).call();
         setIsRegistered(registered);
 
-        // Redirect to page1 after successful connection
+        
        
       } catch (error) {
         console.error("MetaMask connection error:", error);
