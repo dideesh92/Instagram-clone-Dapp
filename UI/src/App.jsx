@@ -1,17 +1,16 @@
-import React from 'react';
-import MainContent from './pages/Maincontent';
-import Page1 from './pages/page1';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CreateAccount from "./components/CreateAccount";
+import CreatePost from "./components/CreatePost";
+import PostsList from "./components/PostsList";
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/page1" element={<Page1 />} />
-      </Routes>
-    </Router>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold text-center my-8">Instagram DApp</h1>
+      <CreateAccount />
+      <CreatePost />
+      <PostsList />
+    </div>
   );
-};
+}
 
 export default App;

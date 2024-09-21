@@ -2,7 +2,7 @@ require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
 
 const private_key=process.env.private_key;
-const alchemyurl=process.env.infuraurl;
+const alchemyurl=process.env.alchemyurl;
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   defaultNetwork:"alchemy",
