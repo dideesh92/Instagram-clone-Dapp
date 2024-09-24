@@ -25,7 +25,7 @@ The primary goal of this application is to create an Instagram-like platform tha
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/instagram-dapp.git
+   git clone https://github.com/dideesh92/Instagram-clone-Dapp.git
    ```
 
 2. Navigate to the project directory:
@@ -42,23 +42,6 @@ The primary goal of this application is to create an Instagram-like platform tha
    ```bash
    npm run dev
    ```
-
-5. Open the app in your browser at:
-   ```
-   http://localhost:3000
-   ```
-
-## 📦 Deployment
-
-To deploy the smart contracts to an Ethereum testnet (e.g., Sepolia), follow these steps:
-
-1. Update your `.env` file with your Ethereum provider URL and private key.
-2. Deploy the smart contracts using Hardhat:
-   ```bash
-   npx hardhat run scripts/deploy.js --network sepolia
-   ```
-
-3. After deployment, update your frontend with the new contract address.
 
 ## 📝 Smart Contract Overview
 
