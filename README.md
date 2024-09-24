@@ -30,7 +30,7 @@ The primary goal of this application is to create an Instagram-like platform tha
 
 2. Navigate to the project directory:
    ```bash
-   cd instagram-dapp
+   cd Instagram-clone-Dapp
    ```
 
 3. Install the necessary dependencies:
